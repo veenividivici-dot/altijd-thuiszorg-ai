@@ -1,23 +1,24 @@
 <script>
 async function sendMessage() {
-  const input = document.getElementById("chatInput");
-  const message = input.value;
+    const input = document.getElementById("chatInput");
+    const message = input.value;
 
-  const response = await fetch("https://altijd-thuiszorg-ai.vercel.app/api/chat", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ message }),
-  });
+    const response = await fetch("https://https://altijd-thuiszorg-ai.vercel.app/api/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message }),
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  alert(data.reply); // tijdelijk om te testen
+    alert(data.reply); // tijdelijk om te testen
 
-  input.value = "";
+    input.value = "";
 }
 </script>
-<button onclick="sendMessage()">Verstuur</button>
 
+<input type="text" id="chatInput" placeholder="Typ je vraag..." />
+<button onclick="sendMessage()">Verstuur</button>
 
